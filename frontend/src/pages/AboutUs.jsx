@@ -3,6 +3,39 @@ import { CheckCircle, MapPin, Award, Truck, Shield } from 'lucide-react';
 import { aboutContent, companyInfo } from '../data/mock';
 
 const AboutUs = () => {
+  const stats = [
+    { value: companyInfo.yearsOfExperience, label: 'Years of Service', color: 'blue' },
+    { value: '2000+', label: 'Retail Partners', color: 'green' },
+    { value: '150+', label: 'Hospital Clients', color: 'blue' }
+  ];
+
+  const complianceItems = [
+    {
+      icon: Shield,
+      title: 'Licensed Distributor',
+      description: 'Fully licensed pharmaceutical wholesale distributor with all regulatory approvals',
+      color: 'blue'
+    },
+    {
+      icon: Award,
+      title: 'WHO-GDP Compliant',
+      description: 'Storage facilities maintained as per WHO Good Distribution Practices',
+      color: 'green'
+    },
+    {
+      icon: Truck,
+      title: 'Temperature Controlled',
+      description: 'Cold chain logistics for temperature-sensitive pharmaceutical products',
+      color: 'blue'
+    },
+    {
+      icon: CheckCircle,
+      title: 'Quality Assured',
+      description: 'Complete batch traceability and genuine stock verification',
+      color: 'green'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -30,27 +63,22 @@ const AboutUs = () => {
                 {aboutContent.mission}
               </p>
               <div className="flex items-center space-x-4 pt-4">
-                <div className="text-center">
-                  <p className="text-4xl font-bold text-blue-600">{companyInfo.yearsOfExperience}</p>
-                  <p className="text-sm text-gray-600">Years of Service</p>
-                </div>
-                <div className="h-16 w-px bg-gray-300"></div>
-                <div className="text-center">
-                  <p className="text-4xl font-bold text-green-600">2000+</p>
-                  <p className="text-sm text-gray-600">Retail Partners</p>
-                </div>
-                <div className="h-16 w-px bg-gray-300"></div>
-                <div className="text-center">
-                  <p className="text-4xl font-bold text-blue-600">150+</p>
-                  <p className="text-sm text-gray-600">Hospital Clients</p>
-                </div>
+                {stats.map((stat, index) => (
+                  <React.Fragment key={index}>
+                    {index > 0 && <div className="h-16 w-px bg-gray-300"></div>}
+                    <div className="text-center">
+                      <p className={`text-4xl font-bold text-${stat.color}-600`}>{stat.value}</p>
+                      <p className="text-sm text-gray-600">{stat.label}</p>
+                    </div>
+                  </React.Fragment>
+                ))}
               </div>
             </div>
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1642055514517-7b52288890ec?w=800&q=80"
                 alt="Pharmaceutical facility"
-                className="w-full h-[400px] object-cover rounded-2xl shadow-xl"
+                className="w-full h-96 object-cover rounded-2xl shadow-xl"
               />
             </div>
           </div>
@@ -84,42 +112,18 @@ const AboutUs = () => {
             Compliance & Storage Standards
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center space-y-4">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                <Shield className="h-8 w-8 text-blue-600" />
-              </div>
-              <h3 className="font-bold text-gray-900">Licensed Distributor</h3>
-              <p className="text-sm text-gray-600">
-                Fully licensed pharmaceutical wholesale distributor with all regulatory approvals
-              </p>
-            </div>
-            <div className="text-center space-y-4">
-              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                <Award className="h-8 w-8 text-green-600" />
-              </div>
-              <h3 className="font-bold text-gray-900">WHO-GDP Compliant</h3>
-              <p className="text-sm text-gray-600">
-                Storage facilities maintained as per WHO Good Distribution Practices
-              </p>
-            </div>
-            <div className="text-center space-y-4">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                <Truck className="h-8 w-8 text-blue-600" />
-              </div>
-              <h3 className="font-bold text-gray-900">Temperature Controlled</h3>
-              <p className="text-sm text-gray-600">
-                Cold chain logistics for temperature-sensitive pharmaceutical products
-              </p>
-            </div>
-            <div className="text-center space-y-4">
-              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
-                <CheckCircle className="h-8 w-8 text-green-600" />
-              </div>
-              <h3 className="font-bold text-gray-900">Quality Assured</h3>
-              <p className="text-sm text-gray-600">
-                Complete batch traceability and genuine stock verification
-              </p>
-            </div>
+            {complianceItems.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <div key={index} className="text-center space-y-4">
+                  <div className={`bg-${item.color}-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto`}>
+                    <IconComponent className={`h-8 w-8 text-${item.color}-600`} />
+                  </div>
+                  <h3 className="font-bold text-gray-900">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
