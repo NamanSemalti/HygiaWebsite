@@ -4,9 +4,9 @@ import { aboutContent, companyInfo } from '../data/mock';
 
 const AboutUs = () => {
   const stats = [
-    { value: companyInfo.yearsOfExperience, label: 'Years of Service', color: 'blue' },
-    { value: '2000+', label: 'Retail Partners', color: 'green' },
-    { value: '150+', label: 'Hospital Clients', color: 'blue' }
+    { value: 'Est. ' + companyInfo.established, label: companyInfo.yearsOfExperience + ' Years in Business', color: 'blue' },
+    { value: '500+', label: 'Retail Partners', color: 'green' },
+    { value: '50+', label: 'Hospital Clients', color: 'blue' }
   ];
 
   const complianceItems = [
@@ -67,7 +67,7 @@ const AboutUs = () => {
                   <React.Fragment key={index}>
                     {index > 0 && <div className="h-16 w-px bg-gray-300"></div>}
                     <div className="text-center">
-                      <p className={`text-4xl font-bold text-${stat.color}-600`}>{stat.value}</p>
+                      <p className={`text-4xl font-bold text-blue-600`}>{stat.value}</p>
                       <p className="text-sm text-gray-600">{stat.label}</p>
                     </div>
                   </React.Fragment>
@@ -136,7 +136,7 @@ const AboutUs = () => {
               Our Service Areas
             </h2>
             <p className="text-lg text-gray-600">
-              Currently serving major locations across South India
+              Currently serving major locations across North India
             </p>
           </div>
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
