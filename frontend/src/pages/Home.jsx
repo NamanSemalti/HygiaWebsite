@@ -13,11 +13,10 @@ const Home = () => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Trusted Wholesale Supplier of{' '}
-                  <span className="text-blue-600">Medicines</span>
+                  {companyInfo.tagline}
                 </h1>
                 <p className="text-lg md:text-xl text-gray-600">
-                  Licensed pharmaceutical distributor serving hospitals, clinics, and medical retailers across South India since 2009
+                  Licensed pharmaceutical distributor serving hospitals, clinics, and medical retailers across North India. Est. 2018 – 8+ Years in Pharmaceutical Wholesale.
                 </p>
               </div>
 
@@ -29,12 +28,14 @@ const Home = () => {
                   <span>Request Price List</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
-                <Link
-                  to="/contact"
-                  className="flex items-center justify-center space-x-2 bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-all font-medium text-lg"
+                <a
+                  href={`https://wa.me/${companyInfo.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hello! I am interested in your pharmaceutical wholesale services. Please share more details.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-2 bg-green-500 text-white px-8 py-4 rounded-lg hover:bg-green-600 transition-all font-medium text-lg"
                 >
-                  <span>Contact for Bulk Orders</span>
-                </Link>
+                  <span>Contact via WhatsApp</span>
+                </a>
               </div>
 
               {/* Trust Indicators */}
@@ -56,8 +57,8 @@ const Home = () => {
                 <div className="flex items-center space-x-3">
                   <Clock className="h-8 w-8 text-green-600 flex-shrink-0" />
                   <div>
-                    <p className="text-xs text-gray-500 font-medium">Experience</p>
-                    <p className="text-sm font-bold text-gray-900">{companyInfo.yearsOfExperience} Years</p>
+                    <p className="text-xs text-gray-500 font-medium">Established</p>
+                    <p className="text-sm font-bold text-gray-900">{companyInfo.established} ({companyInfo.yearsOfExperience} Years)</p>
                   </div>
                 </div>
               </div>
@@ -83,7 +84,7 @@ const Home = () => {
               Why Healthcare Professionals Choose Us
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Trusted by 2000+ medical retailers and 150+ hospitals across South India
+              Trusted by medical retailers and hospitals across North India since 2018
             </p>
           </div>
 
