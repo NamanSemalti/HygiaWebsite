@@ -15,12 +15,12 @@ const Footer = () => {
                 <Pill className="h-6 w-6 text-white" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-white">MediSupply</span>
-                <span className="text-xs text-gray-400">Wholesale Pharma</span>
+                <span className="text-xl font-bold text-white">Hygia Healthcare</span>
+                <span className="text-xs text-gray-400">Pharmaceutical Wholesaler</span>
               </div>
             </div>
             <p className="text-sm text-gray-400">
-              Trusted wholesale supplier of medicines serving healthcare institutions and retailers across South India since 2009.
+              Wholesale supplier of branded and generic medicines serving healthcare institutions and retailers across North India since 2018.
             </p>
             <div className="space-y-2 text-sm">
               <p className="text-gray-400">
@@ -28,6 +28,9 @@ const Footer = () => {
               </p>
               <p className="text-gray-400">
                 <span className="font-semibold text-white">GST No:</span> {companyInfo.gstNumber}
+              </p>
+              <p className="text-gray-400">
+                <span className="font-semibold text-white">Est. 2018</span> – 8+ Years in Business
               </p>
             </div>
           </div>

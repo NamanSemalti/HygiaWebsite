@@ -27,8 +27,8 @@ const Navbar = () => {
               <Pill className="h-6 w-6 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-900">MediSupply</span>
-              <span className="text-xs text-gray-600">Wholesale Pharma</span>
+              <span className="text-xl font-bold text-gray-900">Hygia Healthcare</span>
+              <span className="text-xs text-gray-600">Pharmaceutical Wholesaler</span>
             </div>
           </Link>
 
