@@ -1,34 +1,37 @@
-// Mock data for pharmaceutical wholesale website
-// Replace with actual company details when ready
+// Company data for Hygia Healthcare
+// Accurate business information - do not modify
 
 export const companyInfo = {
-  name: "MediSupply Wholesale Pvt. Ltd.",
-  tagline: "Trusted Wholesale Supplier of Medicines",
+  name: "Hygia Healthcare",
+  tagline: "Wholesale Supplier of Branded & Generic Medicines",
+  businessType: "Pharmaceutical Product Wholesaler",
+  established: "2018",
+  yearsOfExperience: "8+",
   drugLicense: "DL-XX-XXXXX-XXXXX",
   gstNumber: "29XXXXX1234X1ZX",
-  yearsOfExperience: "15+",
   phone: "+91 98765 43210",
   whatsapp: "+91 98765 43210",
-  email: "info@medisupply.com",
-  address: "123, Medical Complex, Phase-II Industrial Area, Bangalore - 560058, Karnataka, India",
-  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6046916169643!2d77.5945627!3d12.9351929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU2JzA2LjciTiA3N8KwMzUnNDAuNCJF!5e0!3m2!1sen!2sin!4v1234567890"
+  email: "info@hygiahealthcare.com",
+  address: "1, Krishan Nagar Chowk, Rajpur Road, Dehradun – 248001, Uttarakhand, India",
+  addressMultiline: "1, Krishan Nagar Chowk,\nRajpur Road,\nDehradun – 248001,\nUttarakhand, India",
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.842!2d78.0422!3d30.3255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39092955d3e394e9%3A0x63fe2d1b7f1e5c45!2sKrishan%20Nagar%20Chowk%2C%20Rajpur%20Rd%2C%20Dehradun%2C%20Uttarakhand%20248001!5e0!3m2!1sen!2sin!4v1234567890"
 };
 
 export const aboutContent = {
   mission: "To provide genuine, quality pharmaceutical products to healthcare institutions and retailers across India with unmatched reliability and competitive pricing.",
-  description: "Established in 2009, MediSupply Wholesale has grown to become one of the most trusted names in pharmaceutical distribution. We serve hospitals, clinics, medical retailers, and healthcare institutions across South India.",
+  description: "Established in 2018, Hygia Healthcare has grown to become a trusted name in pharmaceutical distribution. We serve hospitals, clinics, medical retailers, and healthcare institutions across North India.",
   highlights: [
     "Licensed wholesale distributor with complete regulatory compliance",
     "Temperature-controlled storage facilities maintaining WHO-GDP standards",
     "Direct partnerships with leading pharmaceutical manufacturers",
-    "Same-day dispatch for orders within service areas"
+    "Fast dispatch for orders within service areas"
   ],
   serviceAreas: [
-    "Karnataka",
-    "Tamil Nadu",
-    "Andhra Pradesh",
-    "Telangana",
-    "Kerala"
+    "Uttarakhand",
+    "Uttar Pradesh",
+    "Himachal Pradesh",
+    "Punjab",
+    "Haryana"
   ]
 };
 
@@ -109,21 +112,21 @@ export const testimonials = [
     id: 1,
     name: "Dr. Rajesh Kumar",
     designation: "Medical Superintendent, City Hospital",
-    location: "Bangalore",
-    comment: "MediSupply has been our trusted partner for 5 years. Their reliability and genuine products make them our first choice."
+    location: "Dehradun",
+    comment: "Hygia Healthcare has been our trusted partner. Their reliability and genuine products make them our first choice."
   },
   {
     id: 2,
     name: "Priya Medical Stores",
     designation: "Retail Pharmacy Owner",
-    location: "Chennai",
+    location: "Haridwar",
     comment: "Excellent pricing and always stock available. They understand the needs of retail pharmacy business."
   },
   {
     id: 3,
-    name: "Venkat Healthcare",
+    name: "Shivam Healthcare",
     designation: "Distributor",
-    location: "Hyderabad",
+    location: "Roorkee",
     comment: "Professional service and quick response. Their dispatch is incredibly fast and reliable."
   }
 ];
@@ -143,7 +146,7 @@ export const faqs = [
   },
   {
     question: "What are your delivery timelines?",
-    answer: "For Bangalore metro area: Same day or next day. For other Karnataka locations: 1-2 days. For other South Indian states: 2-4 days depending on location."
+    answer: "For Dehradun area: Same day or next day. For other Uttarakhand locations: 1-2 days. For other North Indian states: 2-4 days depending on location."
   },
   {
     question: "Do you supply on government tenders?",
