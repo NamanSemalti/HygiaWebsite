@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ShieldCheck, Award, Clock } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Award, Clock, ShieldCheck as ShieldCheckIcon, IndianRupee, Truck, Users } from 'lucide-react';
 import { companyInfo, whyChooseUs } from '../data/mock';
 
 const Home = () => {
@@ -89,12 +89,13 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item) => {
-              const IconComponent = require('lucide-react')[
-                item.icon.split('-').map((word, index) =>
-                  index === 0 ? word.charAt(0).toUpperCase() + word.slice(1) :
-                  word.charAt(0).toUpperCase() + word.slice(1)
-                ).join('')
-              ];
+              const iconMap = {
+                'shield-check': ShieldCheckIcon,
+                'indian-rupee': IndianRupee,
+                'truck': Truck,
+                'users': Users
+              };
+              const IconComponent = iconMap[item.icon];
 
               return (
                 <div
