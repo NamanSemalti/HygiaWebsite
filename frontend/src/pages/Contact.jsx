@@ -74,12 +74,25 @@ const Contact = () => {
     if (validateForm()) {
       setIsSubmitting(true);
       
-      // Simulate form submission
+      // Prepare WhatsApp message
+      const message = `*New Inquiry from ${formData.businessName}*\n\n` +
+        `Contact Person: ${formData.contactPerson}\n` +
+        `Phone: ${formData.phone}\n` +
+        `Email: ${formData.email}\n` +
+        `Drug License: ${formData.drugLicense}\n` +
+        `GST: ${formData.gstNumber || 'Not provided'}\n\n` +
+        `Message: ${formData.message}`;
+      
+      const whatsappUrl = `https://wa.me/${companyInfo.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+      
+      // Small delay then redirect to WhatsApp
       setTimeout(() => {
         setIsSubmitting(false);
+        window.open(whatsappUrl, '_blank');
+        
         toast({
-          title: "Inquiry Submitted Successfully!",
-          description: "We will contact you within 24 hours.",
+          title: "Thank You!",
+          description: "We will contact you soon. You're being redirected to WhatsApp...",
         });
         
         // Reset form
@@ -153,8 +166,8 @@ const Contact = () => {
                   <MapPin className="h-6 w-6 text-blue-600" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">Visit Us</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {companyInfo.address}
+                <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                  {companyInfo.addressMultiline}
                 </p>
               </div>
             </div>
@@ -336,7 +349,10 @@ const Contact = () => {
       {/* Map Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Location</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">Our Location</h2>
+          <p className="text-center text-gray-600 mb-8 whitespace-pre-line">
+            {companyInfo.addressMultiline}
+          </p>
           <div className="rounded-xl overflow-hidden shadow-lg">
             <iframe
               src={companyInfo.mapEmbedUrl}
@@ -346,7 +362,7 @@ const Contact = () => {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Company Location"
+              title="Hygia Healthcare Location - Dehradun"
               className="w-full"
             ></iframe>
           </div>
